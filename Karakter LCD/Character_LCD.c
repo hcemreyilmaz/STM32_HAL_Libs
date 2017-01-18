@@ -1,20 +1,20 @@
 /*
 ##########################################################################
-## Dosya Adı		: Character_LCD.c				##
-## Yazar		: Hüseyin Cemre Yılmaz				##
-## İletişim		: hcemreyilmaz@gmail.com			##
-## Sürüm		: 1.00						##
+## Dosya AdÃ½		: Character_LCD.c				##
+## Yazar		: HÃ¼seyin Cemre YÃ½lmaz				##
+## ÃletiÃ¾im		: hcemreyilmaz@gmail.com			##
+## SÃ¼rÃ¼m		: 1.00						##
 ## 									##
-## Açıklama		: Bu kütüphane Karakter LCD çalışmalarında kul-	##
-##			  lanılmak amacıyla hazırlanmıştır. Kütüphaneyi ##
-##			  kullanabilmeniz için ST HAL Kütüphaneleri kul-##
-##			  lanıyor olmanız gerekmektedir.		##
+## AÃ§Ã½klama		: Bu kÃ¼tÃ¼phane Karakter LCD Ã§alÃ½Ã¾malarÃ½nda kul-	##
+##			  lanÃ½lmak amacÃ½yla hazÃ½rlanmÃ½Ã¾tÃ½r. KÃ¼tÃ¼phaneyi ##
+##			  kullanabilmeniz iÃ§in ST HAL KÃ¼tÃ¼phaneleri kul-##
+##			  lanÃ½yor olmanÃ½z gerekmektedir.		##
 ##									##
-##			  CubeMX kullanarak oluşturulan projelerde	##
-##			  çıkış pinlerinizin User Label kısımlarını	##
+##			  CubeMX kullanarak oluÃ¾turulan projelerde	##
+##			  Ã§Ã½kÃ½Ã¾ pinlerinizin User Label kÃ½sÃ½mlarÃ½nÃ½	##
 ##			  LCD_RS	LCD_D4		LCD_D6		##
 ##			  LCD_EN	LCD_D5		LCD_D7		##
-##			  şeklinde tanımlamanız gerekiyor.		##
+##			  Ã¾eklinde tanÃ½mlamanÃ½z gerekiyor.		##
 ##########################################################################
 */
 
@@ -129,19 +129,19 @@ void LCD_Out_CP(char *out_char)
 
 void LCD_Init(char bits, char font, char lines)
 {		
-		HAL_Delay(250000);
-	  LCD_Cmd(_RETURN_HOME);
-    HAL_Delay(50000);
+    LCD_Delay(250);
+    LCD_Cmd(_RETURN_HOME);
+    LCD_Delay(50);
     LCD_Cmd(0x20 | bits | font | lines);
-    HAL_Delay(50000);
+    LCD_Delay(50);
     LCD_Cmd(_LCD_INIT);
-    HAL_Delay(50000);
+    LCD_Delay(50);
     LCD_Cmd(0x0E);
-    HAL_Delay(50000);
+    LCD_Delay(50);
     LCD_Cmd(0x0C);
-    HAL_Delay(50000);
+    LCD_Delay(50);
     LCD_Cmd(0x01);
-		HAL_Delay(100000);
+    LCD_Delay(100);
 }
 
 void LCD_Goto(unsigned char row, unsigned char column)
