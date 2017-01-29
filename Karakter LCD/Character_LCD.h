@@ -1,5 +1,3 @@
-#define _LCD_DELAY 					0x32	// 50 microSeconds
-
 #define _TURN_ON						0x0C	// Turn Lcd display on
 #define _TURN_OFF						0x08	// Turn Lcd display off
 #define _FIRST_ROW					0x80	// Move cursor to the 1st row
@@ -26,7 +24,7 @@
 //#define _LCD_INIT					0x05
 //#define _LCD_INIT					0x07
 
-void LCD_Delay(void);
+void LCD_Delay(unsigned short delay);
 void LCD_Cmd(char out_char);
 void LCD_Char_CP(char out_char);
 void LCD_Char(unsigned char row, unsigned char column, char out_char);
