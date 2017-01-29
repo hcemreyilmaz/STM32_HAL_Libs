@@ -21,9 +21,9 @@
 #include "stm32f1xx_hal.h"
 #include "Character_LCD.h"
 	
-void LCD_Delay(void)
+void LCD_Delay(uint16_t delay)
 {
-	HAL_Delay(_LCD_DELAY);
+	HAL_Delay(delay);
 }
 
 void LCD_Cmd(char out_char)
