@@ -36,7 +36,7 @@ void LCD_Cmd(char out_char)
 	LCD_D6_GPIO_Port->BRR  = LCD_D6_Pin;
 	LCD_D7_GPIO_Port->BRR  = LCD_D7_Pin;
 	
-	LCD_Delay(50);
+	LCD_Delay(10);
 	
 	LCD_EN_GPIO_Port->ODR |= LCD_EN_Pin;
 		
@@ -45,7 +45,7 @@ void LCD_Cmd(char out_char)
 	if((out_char & 0x40)>>6) LCD_D6_GPIO_Port->BSRR = LCD_D6_Pin; else LCD_D6_GPIO_Port->BSRR = (uint32_t)LCD_D6_Pin << 16;
 	if((out_char & 0x80)>>7) LCD_D7_GPIO_Port->BSRR = LCD_D7_Pin; else LCD_D7_GPIO_Port->BSRR = (uint32_t)LCD_D7_Pin << 16;
 	
-	LCD_Delay(50);
+	LCD_Delay(10);
 	
 	LCD_EN_GPIO_Port->BRR = LCD_EN_Pin;
 	LCD_D4_GPIO_Port->BRR = LCD_D4_Pin;
@@ -53,7 +53,7 @@ void LCD_Cmd(char out_char)
 	LCD_D6_GPIO_Port->BRR = LCD_D6_Pin;
 	LCD_D7_GPIO_Port->BRR = LCD_D7_Pin;
 	
-	LCD_Delay(50);
+	LCD_Delay(10);
 	
 	LCD_EN_GPIO_Port->ODR |= LCD_EN_Pin;
 	
@@ -62,7 +62,7 @@ void LCD_Cmd(char out_char)
 	if((out_char & 0x04)>>2) LCD_D6_GPIO_Port->BSRR = LCD_D6_Pin; else LCD_D6_GPIO_Port->BSRR = (uint32_t)LCD_D6_Pin << 16;
 	if((out_char & 0x08)>>3) LCD_D7_GPIO_Port->BSRR = LCD_D7_Pin; else LCD_D7_GPIO_Port->BSRR = (uint32_t)LCD_D7_Pin << 16;
 
-	LCD_Delay(50);
+	LCD_Delay(10);
 	
 	LCD_EN_GPIO_Port->BRR = LCD_EN_Pin;
 	LCD_D4_GPIO_Port->BRR = LCD_D4_Pin;
@@ -81,7 +81,7 @@ void LCD_Char_CP(char out_char)
 	LCD_D6_GPIO_Port->BRR  = LCD_D6_Pin;
 	LCD_D7_GPIO_Port->BRR  = LCD_D7_Pin;
 	
-	LCD_Delay(50);
+	LCD_Delay(10);
 	
 	LCD_EN_GPIO_Port->ODR |= LCD_EN_Pin;
 		
@@ -90,7 +90,7 @@ void LCD_Char_CP(char out_char)
 	if((out_char & 0x40)>>6) LCD_D6_GPIO_Port->BSRR = LCD_D6_Pin; else LCD_D6_GPIO_Port->BSRR = (uint32_t)LCD_D6_Pin << 16;
 	if((out_char & 0x80)>>7) LCD_D7_GPIO_Port->BSRR = LCD_D7_Pin; else LCD_D7_GPIO_Port->BSRR = (uint32_t)LCD_D7_Pin << 16;
 	
-	LCD_Delay(50);
+	LCD_Delay(10);
 	
 	LCD_EN_GPIO_Port->BRR = LCD_EN_Pin;
 	LCD_D4_GPIO_Port->BRR = LCD_D4_Pin;
@@ -98,7 +98,7 @@ void LCD_Char_CP(char out_char)
 	LCD_D6_GPIO_Port->BRR = LCD_D6_Pin;
 	LCD_D7_GPIO_Port->BRR = LCD_D7_Pin;
 	
-	LCD_Delay(50);
+	LCD_Delay(10);
 	
 	LCD_EN_GPIO_Port->ODR |= LCD_EN_Pin;
 	
@@ -107,7 +107,7 @@ void LCD_Char_CP(char out_char)
 	if((out_char & 0x04)>>2) LCD_D6_GPIO_Port->BSRR = LCD_D6_Pin; else LCD_D6_GPIO_Port->BSRR = (uint32_t)LCD_D6_Pin << 16;
 	if((out_char & 0x08)>>3) LCD_D7_GPIO_Port->BSRR = LCD_D7_Pin; else LCD_D7_GPIO_Port->BSRR = (uint32_t)LCD_D7_Pin << 16;
 
-	LCD_Delay(50);
+	LCD_Delay(10);
 	
 	LCD_EN_GPIO_Port->BRR = LCD_EN_Pin;
 	LCD_D4_GPIO_Port->BRR = LCD_D4_Pin;
@@ -120,10 +120,10 @@ void LCD_Out_CP(char *out_char)
 {
 	while(*out_char)
 	{
-		LCD_Delay(50);
+		LCD_Delay(10);
 		LCD_Char_CP(*out_char++);
 	}
-	LCD_Delay(50);
+	LCD_Delay(10);
 }
 
 
